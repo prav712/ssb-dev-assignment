@@ -25,9 +25,13 @@ public class StationUpdateProviderController {
         this.stationUpdateProvider = stationUpdateProvider;
     }
 
-    @GetMapping(value = "/bikeStationUpdate", produces = {"application/json"})
+    @GetMapping(value = "/getBikeStations", produces = {"application/json"})
     public ResponseEntity<List<Station>> getStationUpdate(@RequestHeader("Client-Identifier") String clientIdentifier) {
         try {
+            if (clientIdentifier.split("-").length != 2) {
+                throw new ResponseStatusException(
+                        HttpStatus.BAD_REQUEST, "Incorrect header value: " + clientIdentifier);
+            }
             return new ResponseEntity<>(stationUpdateProvider.getStationUpdate(clientIdentifier), HttpStatus.OK);
         } catch (DataNotFoundException | DataDiscrepancyException e) {
             throw new ResponseStatusException(
