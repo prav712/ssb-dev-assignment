@@ -36,7 +36,7 @@ All requests to our real time API should send the Client-Identifier header. This
 ## Get list of bike stations
 
 `GET`
-curl -i -H 'Client-Identifier: IDENTIFIER' http://localhost:8081/getBikeStations
+curl -i -H 'Client-Identifier: IDENTIFIER-ID' http://localhost:8081/getBikeStations
  
 ##Success Response
  `Code: 200`
