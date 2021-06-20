@@ -50,6 +50,7 @@ curl -i -H 'Client-Identifier: IDENTIFIER-ID' http://localhost:8081/getBikeStati
      "num_docks_available":22},]
   `       
 ##Error Response
+
 `Code: 404 Not found`
 
 `Code: 400 Bad request`
