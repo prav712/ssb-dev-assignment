@@ -36,20 +36,26 @@ All requests to our real time API should send the Client-Identifier header. This
 ## Get list of bike stations
 
 `GET`
-curl -i -H 'Client-Identifier: IDENTIFIER' http://localhost:8081/bikeStationUpdate
+curl -i -H 'Client-Identifier: IDENTIFIER' http://localhost:8081/getBikeStations
  
-## Response
-"stations": [
-      {  
-        "station_id":"627",
-        "name":"Skøyen Stasjon",
-        "address":"Skøyen Stasjon",
-        "lat":59.9226729,
-        "lon":10.6788129,
-        "capacity":20
-      },
-    ]
+##Success Response
+ `Code: 200`
  
+`Content`
+
+     `[{  
+                 "station_id":"627",
+                 "name":"Skøyen Stasjon",
+                 "address":"Skøyen Stasjon",
+                 "lat":59.9226729,
+                 "lon":10.6788129,
+                 "capacity":20
+               },]
+  `       
+##Error Response
+`Code: 404 Not found`
+
+`Code: 400 Bad request`
 ### Note
 Need to provide api key to access google map without warnings
 <script src="http://maps.google.com/maps/api/js?key={Your key}"/>
