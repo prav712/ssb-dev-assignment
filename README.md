@@ -24,14 +24,32 @@ mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=
 ### How to deploy?
 (not implemented yet) 
 
+### App URL?
+http://localhost:8081/showStations
+
+
+###Identification in header
+All requests to our real time API should send the Client-Identifier header. This should contain a value that describes the application accessing the API. The value should contain your company/organization name, follwed by a dash and the application's name, like mycompany-travelplanner or myname-citymonitor.
+
 ### Rest api endpoint
 
-http://localhost:8081/bikeStationUpdate
+## Get list of bike stations
 
-Header: 
-
-
-
+`GET`
+curl -i -H 'Client-Identifier: IDENTIFIER' http://localhost:8081/bikeStationUpdate
+ 
+## Response
+"stations": [
+      {  
+        "station_id":"627",
+        "name":"Skøyen Stasjon",
+        "address":"Skøyen Stasjon",
+        "lat":59.9226729,
+        "lon":10.6788129,
+        "capacity":20
+      },
+    ]
+ 
 ### Note
 Need to provide api key to access google map without warnings
 <script src="http://maps.google.com/maps/api/js?key={Your key}"/>
