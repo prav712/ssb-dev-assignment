@@ -43,14 +43,11 @@ curl -i -H 'Client-Identifier: IDENTIFIER' http://localhost:8081/getBikeStations
  
 `Content`
 
-     `[{  
-                 "station_id":"627",
-                 "name":"Skøyen Stasjon",
-                 "address":"Skøyen Stasjon",
-                 "lat":59.9226729,
-                 "lon":10.6788129,
-                 "capacity":20
-               },]
+     [{"station_id":"2307",
+     "name":"Domus Athletica",
+     "lat":59.94622,"lon":10.724627,
+     "num_bikes_available":8,
+     "num_docks_available":22},]
   `       
 ##Error Response
 `Code: 404 Not found`
