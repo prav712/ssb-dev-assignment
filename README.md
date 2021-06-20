@@ -38,7 +38,7 @@ All requests to our real time API should send the Client-Identifier header. This
 `GET`
 curl -i -H 'Client-Identifier: IDENTIFIER-ID' http://localhost:8081/getBikeStations
  
-##Success Response
+## Success Response
  `Code: 200`
  
 `Content`
@@ -49,7 +49,7 @@ curl -i -H 'Client-Identifier: IDENTIFIER-ID' http://localhost:8081/getBikeStati
      "num_bikes_available":8,
      "num_docks_available":22},]
   `       
-##Error Response
+## Error Response
 
 `Code: 404 Not found`
 
