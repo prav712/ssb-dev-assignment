@@ -22,7 +22,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @WebMvcTest(StationUpdateProviderController.class)
 class StationUpdateProviderControllerTest {
-    private static final String URL = "/bikeStationUpdate";
+    private static final String URL = "/getBikeStations";
     @Autowired
     private MockMvc mockMvc;
     @MockBean

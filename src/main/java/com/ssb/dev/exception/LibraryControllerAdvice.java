@@ -5,7 +5,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 public class LibraryControllerAdvice {
     @ExceptionHandler(value = {DataDiscrepancyException.class, DataNotFoundException.class})
-    public ModelAndView duplicateBookException(DataDiscrepancyException e) {
+    public ModelAndView DataException(DataDiscrepancyException e) {
         final ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("message", e.getMessage());
         modelAndView.setViewName("error");

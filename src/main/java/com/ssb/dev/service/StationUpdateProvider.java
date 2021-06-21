@@ -36,8 +36,14 @@ public class StationUpdateProvider {
 
         stationInfoList.forEach(stationWithInfo -> {
                 Station matchingStationWithStatus = stationStatusById.get(stationWithInfo.getStation_id());
-                stationWithInfo.setNum_bikes_available(matchingStationWithStatus.getNum_bikes_available());
-                stationWithInfo.setNum_docks_available(matchingStationWithStatus.getNum_docks_available());
+                if(matchingStationWithStatus == null){
+                    logger.error(String.format("No matching status found for station id: %s", stationWithInfo.getStation_id()));
+                    stationWithInfo.setNum_bikes_available(0);
+                    stationWithInfo.setNum_docks_available(0);
+                }else {
+                    stationWithInfo.setNum_bikes_available(matchingStationWithStatus.getNum_bikes_available());
+                    stationWithInfo.setNum_docks_available(matchingStationWithStatus.getNum_docks_available());
+                }
         });
         return stationInfoList;
     }
