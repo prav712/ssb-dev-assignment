@@ -1,4 +1,4 @@
-# Springboot app showing oslo city bike stations with bikes and docks availabilities.
+# An app showing oslo city bike stations with bikes and docks availabilities, using google map api.
 # An api to find available oslo city bike stations containing bikes and docks availabilities.
 ### How to build?
 ```
